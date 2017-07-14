@@ -60,7 +60,6 @@ public class TankBot extends Tank {
 		}else{
 			goOnPoint();
 		}
-
 	}
 
 	@Override

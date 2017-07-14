@@ -116,14 +116,17 @@ public abstract class Player {
 					tempY = -1;
 				}
 				MyVector temp = new MyVector(tempX, tempY).unit();
-				tempX = temp.x * this.currentSpeed * delta;
-				tempY = temp.y * this.currentSpeed * delta;
+				tempX = temp.x;
+				tempY = temp.y;
 			}
 		}
-		doMovement(tempX, tempY);
+		doMovement(tempX, tempY, delta);
 	}
 
-	protected void doMovement(float dX, float dY) {
+	protected void doMovement(float dX, float dY, float delta) {
+		FinallySmartVectors d = new FinallySmartVectors(dX, dY).unit().scl(speed).scl(delta);
+		dX = d.x;
+		dY = d.y;
 		if (dX != 0 || dY != 0) {
 			if (this.world != null) {
 				if (this.world.getWalls().doesCollides(new MyLine(this.x, this.y, this.x + dX, this.y))) {
