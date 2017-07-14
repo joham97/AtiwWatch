@@ -63,7 +63,7 @@ public class Tank extends Bot {
 		InGameHud.setCooldown(this.cooldown);
 		
 		updateShield();
-		MyVector vec = new MyVector(shieldX - this.x, shieldY - this.y)
+		MyVector vec = new MyVector(this.shieldX - this.x, this.shieldY - this.y)
 				.unit();
 		this.shield.set((int) (this.x + vec.scl(this.shield_distance).x),
 				(int) (this.y + vec.scl(this.shield_distance).y), (float) (Math.atan2(vec.y, vec.x) * 180d / Math.PI));
@@ -72,8 +72,8 @@ public class Tank extends Bot {
 		if (this.cooldown <= this.cooldownMax - Hero.TANK_SHATTER_SHIELD_AWAY) {
 			this.shield.active = true;
 		}
-		if (canDoSpecialAttack() && InputHandler.gameKeyJustPressed(Keys.SHIFT_LEFT)
-				|| (Gdx.input.isButtonPressed(Buttons.MIDDLE) && Gdx.input.justTouched())) {
+		if (canDoSpecialAttack() && (InputHandler.gameKeyJustPressed(Keys.SHIFT_LEFT)
+				|| (Gdx.input.isButtonPressed(Buttons.MIDDLE) && Gdx.input.justTouched()))) {
 			shoot();
 		}
 	}
@@ -86,9 +86,9 @@ public class Tank extends Bot {
 	@Override
 	protected void shoot() {
 		this.cooldown = this.cooldownMax;
-		for (int i = 0; i < shatter_count; i++) {
-			this.world.newBullet((int) this.x, (int) this.y, (float) Math.cos(i / (float)shatter_count * (Math.PI * 2)),
-					(float) Math.sin(i / (float)shatter_count * (Math.PI * 2)), this.dmg, this.shotSpeed, this.shatter_range);
+		for (int i = 0; i < this.shatter_count; i++) {
+			this.world.newBullet((int) this.x, (int) this.y, (float) Math.cos(i / (float)this.shatter_count * (Math.PI * 2)),
+					(float) Math.sin(i / (float)this.shatter_count * (Math.PI * 2)), this.dmg, this.shotSpeed, this.shatter_range);
 			this.shield.active = false;
 		}
 	}
