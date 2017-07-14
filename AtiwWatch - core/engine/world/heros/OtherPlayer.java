@@ -6,7 +6,6 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer.ShapeType;
 import consts.Hero;
 import consts.MyColors;
 import protocol.worlddata.PlayerData;
-import world.heros.bots.Bot;
 import world.heros.specialattack.Aura;
 
 public class OtherPlayer extends Bot {

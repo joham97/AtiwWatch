@@ -28,17 +28,18 @@ import protocol.worlddata.TerrainData;
 import protocol.worlddata.WorldData;
 import serverworld.ServerTerrain;
 import serverworld.entities.HealthPack;
-import world.heros.Assassin;
-import world.heros.Grabber;
-import world.heros.Medic;
 import world.heros.OtherPlayer;
-import world.heros.Soldier;
-import world.heros.Tank;
+import world.heros.Player;
 import world.heros.bots.AssassinBot;
 import world.heros.bots.GrabberBot;
 import world.heros.bots.MedicBot;
 import world.heros.bots.SoldierBot;
 import world.heros.bots.TankBot;
+import world.heros.herotypes.Assassin;
+import world.heros.herotypes.Grabber;
+import world.heros.herotypes.Medic;
+import world.heros.herotypes.Soldier;
+import world.heros.herotypes.Tank;
 import world.heros.specialattack.Aura;
 import world.heros.specialattack.Dash;
 import world.heros.specialattack.HeroSpecialAttack;
@@ -106,7 +107,7 @@ public class World {
 		}
 		if (this.me != null) {
 			this.me.id = AtiwWatch.ID;
-			this.me.team = AtiwWatch.team;
+			this.me.setTeam(AtiwWatch.team);
 			this.me.respawn();
 		}
 	}
@@ -115,7 +116,7 @@ public class World {
 		updateServerInput();
 
 		for (OtherPlayer player : otherPlayers) {
-			if (player.heroType == Hero.MEDIC && player.getAura().getAuraType() == Aura.SPEED && me.team == player.team
+			if (player.heroType == Hero.MEDIC && player.getAura().getAuraType() == Aura.SPEED && me.getTeam() == player.getTeam()
 					&& new MyVector(me.x - player.x, me.y - player.y).len() < Hero.MEDIC_AURA_RANGE) {
 				me.addSpeed(Hero.MEDIC_AURA_SPEED_BOOST);
 			}
@@ -222,7 +223,7 @@ public class World {
 					this.me.setKills(player.kills);
 					this.me.setDeaths(player.deaths);
 					InGameHud.health = player.health;
-					this.me.health = player.health;
+					this.me.setHealth(player.health);
 				}
 			}
 
@@ -239,7 +240,7 @@ public class World {
 			InGameHud.setPointData(worldData.pointData);
 			InGameHud.serverUPS = worldData.ups;
 
-			InGameHud.maxHealth = this.me.maxHealth;
+			InGameHud.maxHealth = this.me.getMaxHealth();
 
 		}
 		if (this.client.newPos != null) {

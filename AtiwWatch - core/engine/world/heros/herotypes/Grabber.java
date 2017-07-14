@@ -1,4 +1,4 @@
-package world.heros;
+package world.heros.herotypes;
 
 import java.util.Random;
 
@@ -13,7 +13,7 @@ import helper.InputHandler;
 import hud.InGameHud;
 import protocol.SpecialAttack;
 import world.World;
-import world.heros.bots.Bot;
+import world.heros.Bot;
 import world.heros.specialattack.Hook;
 
 public class Grabber extends Bot {

@@ -1,4 +1,4 @@
-package world;
+package world.heros;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Buttons;
@@ -15,6 +15,8 @@ import helper.InputHandler;
 import hud.InGameHud;
 import protocol.worlddata.PlayerData;
 import serverworld.ServerTerrain;
+import world.Terrain;
+import world.World;
 
 public abstract class Player {
 
@@ -276,6 +278,10 @@ public abstract class Player {
 
 	public int getHealth() {
 		return health;
+	}
+	
+	public void setHealth(int health) {
+		this.health = health;
 	}
 
 	public int getMaxHealth() {

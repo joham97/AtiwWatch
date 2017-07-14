@@ -1,4 +1,4 @@
-package world.heros;
+package world.heros.herotypes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Buttons;
@@ -11,7 +11,7 @@ import helper.InputHandler;
 import hud.InGameHud;
 import world.Shield;
 import world.World;
-import world.heros.bots.Bot;
+import world.heros.Bot;
 
 public class Tank extends Bot {
 

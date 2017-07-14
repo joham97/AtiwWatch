@@ -1,4 +1,4 @@
-package world.heros;
+package world.heros.herotypes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Buttons;
@@ -8,7 +8,7 @@ import consts.Hero;
 import hud.InGameHud;
 import protocol.worlddata.PlayerData;
 import world.World;
-import world.heros.bots.Bot;
+import world.heros.Bot;
 import world.heros.specialattack.Aura;
 
 public class Medic extends Bot {

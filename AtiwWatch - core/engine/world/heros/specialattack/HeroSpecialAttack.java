@@ -3,8 +3,8 @@ package world.heros.specialattack;
 import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 
 import protocol.SpecialAttack;
-import world.Player;
 import world.heros.OtherPlayer;
+import world.heros.Player;
 
 public abstract class HeroSpecialAttack {
 

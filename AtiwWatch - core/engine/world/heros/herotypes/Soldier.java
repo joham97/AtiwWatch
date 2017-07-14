@@ -1,4 +1,4 @@
-package world.heros;
+package world.heros.herotypes;
 
 import com.badlogic.gdx.Gdx;
 import com.badlogic.gdx.Input.Buttons;
@@ -10,7 +10,8 @@ import helper.FinallySmartVectors;
 import helper.InputHandler;
 import hud.InGameHud;
 import world.World;
-import world.heros.bots.Bot;
+import world.heros.Bot;
+import world.heros.OtherPlayer;
 
 public class Soldier extends Bot {
 

@@ -23,7 +23,7 @@ import protocol.worlddata.ShieldData;
 import protocol.worlddata.TerrainData;
 import protocol.worlddata.WorldData;
 import world.World;
-import world.heros.Tank;
+import world.heros.herotypes.Tank;
 
 public class GameClient {
 

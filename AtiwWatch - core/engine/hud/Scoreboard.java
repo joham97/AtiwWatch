@@ -12,8 +12,8 @@ import com.socketserver.hebe.AtiwWatch;
 
 import consts.Hero;
 import consts.MyColors;
-import world.Player;
 import world.World;
+import world.heros.Player;
 
 public class Scoreboard {
 
