@@ -9,10 +9,10 @@ import consts.Hero;
 import helper.FinallySmartVectors;
 import helper.InputHandler;
 import hud.InGameHud;
-import world.Player;
 import world.World;
+import world.heros.bots.Bot;
 
-public class Soldier extends Player {
+public class Soldier extends Bot {
 
 	private final float aimBotTime;
 	private float aimBotTimeLeft;

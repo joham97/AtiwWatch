@@ -12,11 +12,11 @@ import helper.FinallySmartVectors;
 import helper.InputHandler;
 import hud.InGameHud;
 import protocol.SpecialAttack;
-import world.Player;
 import world.World;
+import world.heros.bots.Bot;
 import world.heros.specialattack.Hook;
 
-public class Grabber extends Player {
+public class Grabber extends Bot {
 
 	private Random random;
 

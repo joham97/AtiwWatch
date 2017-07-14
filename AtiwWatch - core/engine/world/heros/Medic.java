@@ -7,11 +7,11 @@ import com.badlogic.gdx.graphics.glutils.ShapeRenderer;
 import consts.Hero;
 import hud.InGameHud;
 import protocol.worlddata.PlayerData;
-import world.Player;
 import world.World;
+import world.heros.bots.Bot;
 import world.heros.specialattack.Aura;
 
-public class Medic extends Player {
+public class Medic extends Bot {
 
 	protected int shotsLeft;
 	protected float shotsTime;

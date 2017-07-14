@@ -9,11 +9,11 @@ import collision.MyVector;
 import consts.Hero;
 import helper.InputHandler;
 import hud.InGameHud;
-import world.Player;
 import world.Shield;
 import world.World;
+import world.heros.bots.Bot;
 
-public class Tank extends Player {
+public class Tank extends Bot {
 
 	private Shield shield;
 	private int shield_distance;

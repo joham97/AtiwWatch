@@ -12,11 +12,11 @@ import helper.InputHandler;
 import hud.InGameHud;
 import protocol.SpecialAttack;
 import serverworld.ServerTerrain;
-import world.Player;
 import world.World;
+import world.heros.bots.Bot;
 import world.heros.specialattack.Dash;
 
-public class Assassin extends Player {
+public class Assassin extends Bot {
 
 	private int dashCharges;
 
